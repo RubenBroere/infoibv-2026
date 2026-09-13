@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ImageApp.MainWindow"
+        Width="1000" Height="500"
+        Title="Image Processing Assignment">
+
+  <StackPanel Margin="10" Spacing="8">
+
+    <!-- Side-by-side images -->
+    <Grid ColumnDefinitions="*,*" Height="300" Margin="0,0,0,10">
+      <Image x:Name="OriginalImage" Grid.Column="0" Stretch="Uniform"/>
+      <Image x:Name="ProcessedImage" Grid.Column="1" Stretch="Uniform"/>
+    </Grid>
+
+    <!-- Controls: Load, Save, Dropdown, Apply -->
+    <StackPanel Orientation="Horizontal" Spacing="10">
+      <Button Content="Load Image" Width="100" Click="OnLoadImage"/>
+      <Button Content="Save Image" Width="100" Click="OnSaveImage"/>
+      <ComboBox x:Name="OperationBox" Width="240"/>
+      <Button Content="Apply" Width="100" Click="OnApply"/>
+    </StackPanel>
+
+    <!--
+      TODO: Several functions/tasks need extra parameters from the user
+      (e.g. kernel size, sigma, threshold, structuring element size, filter type).
+      Add whatever controls you need here (TextBoxes, ComboBoxes, etc.) and
+      read their values in OnApply. You may restructure this GUI as needed,
+      as long as every implemented function stays reachable through the interface.
+    -->
+
+    <TextBlock x:Name="StatusText" Text="" TextWrapping="Wrap" Margin="0,4,0,0"/>
+
+  </StackPanel>
+</Window>
